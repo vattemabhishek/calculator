@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(162, 209, 209);
+}
+.calculator{
+        background-color: bisque;
+        width: 350px;
+        height : 600px;
+        padding-left: 20px;
+        padding-right: 25px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+}
+input{
+    height : 60px;
+    width : 60px;
+    margin-bottom : 20px;
+    margin-inline:auto;
+    border-radius: 30px;
+}
+.answer{
+    width: 350px;
+}
