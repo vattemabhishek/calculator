@@ -6,11 +6,11 @@ function functionToExec(a) {
     switch (a) {
          case (add):
         {
-
+                operator = 'add';
         } break;
         case (subtract):
         {
-
+                operator = 'subtract';
         }break;
         case(equal):
         {
@@ -18,15 +18,15 @@ function functionToExec(a) {
         }break;
         case(remainder) :
         {
-
+                operator = 'remainder';
         }break;
         case(div):
         {
-
+                operator = 'div';
         }break;
         case(product):
         {
-
+                operator = 'product';
         }break;
         case(plus/minus):
         {
@@ -34,16 +34,22 @@ function functionToExec(a) {
         }break;
         case(decimal):
         {
-
+            
         }break;
         default :
         {
                 if(curVal && storedVal==="") 
                 {
-                   curval = curval+ a.toString();         
+                   curval = curval + a.toString();         
+                }
+                else
+                {
+                    curval = a.toString();
                 }
         }break;
     }
+
+    
     
     
 };
