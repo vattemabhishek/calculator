@@ -8,43 +8,43 @@
     </head>
 <body>
     <div class="calculator">
-    <input type="text" class="answer" id="display"/>
+    <div class="answer" id="display"></div>
     <br>
     <br>
     <br>
     <div class="keypad">
     <div>
-        <input type="button" value="C"   onclick="functionToExec(cancel)">
-        <input type="button" value="+/-" onclick="functionToExec(plus/minus)">
-        <input type="button" value="%"   onclick="functionToExec(remainder)" class = "remainder">
-        <input type="button" value="/"   onclick="functionToExec(div)" class = "division">
+        <input type="button" value="C"   onclick="functionToExec('cancel')">
+        <input type="button" value="+/-" onclick="functionToExec('plus/minus')">
+        <input type="button" value="%"   onclick="functionToExec('remainder')" class = "remainder">
+        <input type="button" value="/"   onclick="functionToExec('div')" class = "division">
     </div>
     <div>
         <input type="button" value="7" onclick="functionToExec(7)">
         <input type="button" value="8" onclick="functionToExec(8)">
         <input type="button" value="9" onclick="functionToExec(9)">
-        <input type="button" value="*" onclick="functionToExec(product)" class="product">
+        <input type="button" value="*" onclick="functionToExec('product')" class="product">
     </div>
     <div>
         <input type="button" value="4" onclick="functionToExec(4)">
         <input type="button" value="5" onclick="functionToExec(5)">
         <input type="button" value="6" onclick="functionToExec(6)">
-        <input type="button" value="-" onclick="functionToExec(subtract)" class="subtract">
+        <input type="button" value="-" onclick="functionToExec('subtract')" class="subtract">
     </div>
     <div>
         <input type="button" value="1"  onclick="functionToExec(1)">
         <input type="button" value="2"  onclick="functionToExec(2)">
         <input type="button" value="3"  onclick="functionToExec(3)">
-        <input type="button" value="+"  onclick="functionToExec(add)"class="add">
+        <input type="button" value="+"  onclick="functionToExec('add')"class="add">
     </div>
     <div>
         <input type="button" value="0"  onclick="functionToExec(0)" class="zero">
-        <input type="button" value="."  onclick="functionToExec(decimal)" class="decimal">
-        <input type="button" value="="  onclick="functionToExec(equal)" class="equal">
+        <input type="button" value="."  onclick="functionToExec('decimal')" class="decimal">
+        <input type="button" value="="  onclick="functionToExec('equal')" class="equal">
     </div>
     </div>
 </div>
 
-</script src="calci.js"> </script>
+<script type="text/javascript" src="calci.js"> </script>
 </body>
 </html>
