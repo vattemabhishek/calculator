@@ -36,7 +36,9 @@ function functionToExec(a) {
       } break;
     case ('decimal'):
       {
-        curVal += '.';
+        if(curVal[curVal.length-1]==='.'){}
+        else{
+        curVal += '.';}
       } break;
     default:
       {
@@ -44,10 +46,8 @@ function functionToExec(a) {
         //curvalue exits and op is empty --> arg appends to curvalue
         //curvalue  and op exists--> cur value is stored and then cur value is assigned with new arg
         //curvalue is not empty and operator exists -> append to current value
-        //
-        // if(operator) {
-
-        // }
+        
+        
         console.log("🚀 ~ file: calci.js:53 ~ functionToExec ~ curVal:", curVal, operator, storedVal, a)
 
         if (curVal !== '' && curVal !== storedVal) {
@@ -73,16 +73,16 @@ function equal() {
     curVal = parseFloat(storedVal) - parseFloat(curVal);
   }
   else if (operator === 'product') {
-    curVal *= storedVal;
-    parseFloat(curVal).toFixed(8);
+    curVal=parseFloat(curVal) * parseFloat(storedVal);
+    
   }
   else if (operator === 'remainder') {
-    curVal %= storedVal;
-    parseFloat(curVal).toFixed(5);
+        curVal=  parseFloat(storedVal) % parseFloat(curVal);
+    
   }
   else if (operator === 'div') {
-    curVal /= storedVal;
-    parseFloat(curVal).toFixed(5);
+        curVal= parseFloat(storedVal)/parseFloat(curVal);
+    
   }
   operator = '';
 }

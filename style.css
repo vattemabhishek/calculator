@@ -10,11 +10,14 @@ body{
 .calculator{
         background-color: D4D4D2;
         width: 400px;
-        height : 560px;
+        height : 650px;
         margin: 10 auto;
         padding-top: 30px;
         padding-left: 30px;
         border-radius: 30px;
+        border-style: solid;
+        border-color:black;
+        border-width: 2px;
     
 }
 input{
@@ -25,15 +28,23 @@ input{
     border-radius: 100px;
     font-size: 25px;
     background-color: ff9500;
+    box-shadow: 2px 2px black;
+    border-style: solid;
+    border-color:black;
+    border-width: 2px;
 
     
 }
 .answer{
-    height: 60px;
+    height: 120px;
     width: 340px;
     margin-top: 20px;
     background-color: white;
     font-size: 50px;
+    overflow: auto;
+    border-style: solid;
+    border-color:black;
+    border-width: 2px;
     
 }
 .zero{
