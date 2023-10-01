@@ -48,12 +48,11 @@ input{
     border-width: 3px;
     
 }
-.zero{
+#zero{
     width : 158px;
 }
 
+.special{
+    background-color: green;
+}
 
-#btn.active {
-    background-color: #ffffff;
-    color: #b1aea9;
-  }

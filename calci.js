@@ -1,34 +1,61 @@
 let curVal = '';
 let storedVal = '';
 let operator = '';
+let prevOp;
 
-function functionToExec(a) {
+function functionToExec(input) {
 
-  switch (a) {
+
+  switch (input) {
     case 'cancel':
       {
         curVal = '';
         storedVal = '';
         operator = '';
+        //unlit all the operators
+        
+        if(prevOp)
+        {
+          prevOp.classList.remove('special');
+        }
+
       } break;
     //if operator is not empty then repeat equals for second time oprrator entry
     case ('add'):
     case ('subtract'):
     case ('remainder'):
-    case ('div'):
+    case ('division'):
     case ('product'):
       {
+        //active operator lit and remove other lit operators
         if (operator !== '') {
           equal();
         }
+        //lit the active operator
+        //unlit the prev active oprator
+        //unlit all other operators
+       
+        const activeOp = document.getElementById(input);
+        activeOp.classList.add('special');
 
-        operator = a;
+        if (!prevOp===activeOp) {
+          prevOp.classList.remove('special');
+        } 
+        prevOp = activeOp;
+
+        operator = input;
         storedVal = curVal;
+
+       
 
       } break;
     case ('equal'):
       {
         equal();
+        //unlit all the operators
+        prevOp.classList.remove('special');
+
+
       } break;
     case ('plus/minus'):
       {
@@ -36,9 +63,10 @@ function functionToExec(a) {
       } break;
     case ('decimal'):
       {
-        if(curVal[curVal.length-1]==='.'){}
-        else{
-        curVal += '.';}
+        if (curVal[curVal.length - 1] === '.') { }
+        else {
+          curVal += '.';
+        }
       } break;
     default:
       {
@@ -46,15 +74,15 @@ function functionToExec(a) {
         //curvalue exits and op is empty --> arg appends to curvalue
         //curvalue  and op exists--> cur value is stored and then cur value is assigned with new arg
         //curvalue is not empty and operator exists -> append to current value
-        
-        
-        console.log("🚀 ~ file: calci.js:53 ~ functionToExec ~ curVal:", curVal, operator, storedVal, a)
+
+
+        console.log("🚀 ~ file: calci.js:53 ~ functionToExec ~ curVal:", curVal, operator, storedVal, input)
 
         if (curVal !== '' && curVal !== storedVal) {
-          curVal += a.toString();
+          curVal += input.toString();
         }
         else {
-          curVal = a.toString();
+          curVal = input.toString();
         }
       } break;
 
@@ -73,22 +101,18 @@ function equal() {
     curVal = parseFloat(storedVal) - parseFloat(curVal);
   }
   else if (operator === 'product') {
-    curVal=parseFloat(curVal) * parseFloat(storedVal);
-    
+    curVal = parseFloat(curVal) * parseFloat(storedVal);
+
   }
   else if (operator === 'remainder') {
-        curVal=  parseFloat(storedVal) % parseFloat(curVal);
-    
+    curVal = parseFloat(storedVal) % parseFloat(curVal);
+
   }
-  else if (operator === 'div') {
-        curVal= parseFloat(storedVal)/parseFloat(curVal);
-    
+  else if (operator === 'division') {
+    curVal = parseFloat(storedVal) / parseFloat(curVal);
+
   }
   operator = '';
 }
 
-const element = document.querySelectorAll('#btn');
 
-element.addEventListener("click", function() {
-  element.style.backgroundColor = "green";
-});
