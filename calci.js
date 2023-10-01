@@ -86,3 +86,9 @@ function equal() {
   }
   operator = '';
 }
+
+const element = document.querySelectorAll('#btn');
+
+element.addEventListener("click", function() {
+  element.style.backgroundColor = "green";
+});
